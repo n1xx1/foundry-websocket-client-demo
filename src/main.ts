@@ -30,9 +30,10 @@ async function actorUpdate(socket: FoundrySocket, _id: string, updates: any) {
 
   const world = await asyncEmit(socket, "world");
 
-  console.log(world.actors.filter((x) => x.name === "Chardyl"));
-
-  // await actorUpdate(socket, "bssF7JhofKU7Df9y", { name: "New Name" });
+  const actorToModify = world.actors.find((x) => x.name === "My Actor Name");
+  if (actorToModify) {
+    await actorUpdate(socket, actorToModify._id, { name: "New Actor Name" });
+  }
 
   socket.close();
 })();
