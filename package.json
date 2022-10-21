@@ -1,0 +1,21 @@
+{
+  "name": "foundry-websocket-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild --bundle --outfile=tmp/main.js --external:./node_modules/* --format=esm --platform=node ./src/main.ts",
+    "start": "node ./tmp/main.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "filenamify": "^5.1.1",
+    "node-fetch": "^3.2.4",
+    "socket.io-client": "^4.5.1"
+  },
+  "devDependencies": {
+    "dotenv-flow": "^3.2.0",
+    "esbuild": "^0.15.12"
+  }
+}
